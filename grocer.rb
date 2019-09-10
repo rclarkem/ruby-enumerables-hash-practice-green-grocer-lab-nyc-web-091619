@@ -43,11 +43,10 @@ new_hash
   	discount20 = (cart[item][:price] * 0.20)
   	cart[item][:price]=  cart[item][:price] - discount20
   	end
-
   end
   cart
   end
 
 def checkout(cart, coupons)
-  # code here
+p consolidate_cart(cart)
 end
