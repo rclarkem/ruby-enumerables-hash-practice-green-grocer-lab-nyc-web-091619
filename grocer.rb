@@ -50,7 +50,7 @@ new_hash
   def checkout(items, coupons)
      cart = consolidate_cart(items)
      coupons_for_items = apply_coupons(cart, coupons)
-     clearance_items = apply_clearance(cart)
+     clearance_items = apply_clearance(coupons_for_items)
 
        total_price = cart.reduce(0) do |memo, (key, val)|
        p memo + val[:price]
