@@ -51,7 +51,7 @@ new_hash
   if cart.length == 0 || cart == nil
   return consolidate_cart(cart)
   end
-  consolidated_cart_items = consolidate_cart(cart)
+cart = consolidate_cart(cart)
   p consolidated_cart_items
   total_price = consolidated_cart_items.reduce(0) do |memo, (key, val)|
   p memo + val[:price]
