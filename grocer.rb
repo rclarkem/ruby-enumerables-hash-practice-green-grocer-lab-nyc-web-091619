@@ -54,7 +54,7 @@ new_hash
 
 sum = 0
       total_price = clearance_items.each do |name, val|
-      
+
       end
       if total_price > 100
         total_price * 0.10
