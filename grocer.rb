@@ -9,6 +9,7 @@ cart.each do |items|
     new_hash[groceryName][:count] = 1
   end
 end
+end
 new_hash
 end
 
