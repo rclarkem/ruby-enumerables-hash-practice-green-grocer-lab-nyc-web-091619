@@ -47,6 +47,15 @@ new_hash
   cart
   end
 
-def checkout(cart, coupons)
-p consolidate_cart(cart)
+  def checkout(cart, coupons)
+  if cart.length == 0 || cart == nil
+  return cart
+  end
+  consolidated_cart_items = consolidate_cart(cart)
+  p consolidated_cart_items
+  total_price = consolidated_cart_items.reduce(0) do |memo, (key, val)|
+  p memo + val[:price]
+  end
+  total_price
+consolidate_cart(cart)
 end
