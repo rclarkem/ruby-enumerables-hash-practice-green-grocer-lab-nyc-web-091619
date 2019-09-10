@@ -52,6 +52,7 @@ new_hash
   return consolidate_cart(cart)
   end
 cart = consolidate_cart(cart)
+coupons_for_items = apply_coupons(cart, coupons)
   total_price = cart.reduce(0) do |memo, (key, val)|
   p memo + val[:price]
   end
