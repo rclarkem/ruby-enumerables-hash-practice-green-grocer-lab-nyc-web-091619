@@ -55,5 +55,5 @@ new_hash
        total_price = clearance_items.reduce(0) do |memo, (key, val)|
        p  memo + (val[:price] * val[:count])
        end
-       total_price > 100 ? total * 0.9 : total_price
+       total_price > 100 ? total_price * 0.9 : total_price
      end
