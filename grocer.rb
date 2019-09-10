@@ -30,21 +30,23 @@ else
 new_hash["#{itemName} W/COUPON"] = {:price => coupon[:cost] / coupon[:num], :clearance => cart[itemName][:clearance], :count => coupon[:num] }
 end
 cart[itemName][:count] = cart[itemName][:count] - coupon[:num]
-
 end
 new_hash[itemName] = cart[itemName]
 end
-
 end
-
 new_hash
   end
 
+  def apply_clearance(cart)
+  cart.each do |item, v|
+  	if cart[item][:clearance] == true
+  	discount20 = (cart[item][:price] * 0.20)
+  	cart[item][:price]=  cart[item][:price] - discount20
+  	end
 
-
-def apply_clearance(cart)
-  # code here
-end
+  end
+  cart
+  end
 
 def checkout(cart, coupons)
   # code here
