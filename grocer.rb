@@ -13,8 +13,8 @@ end
 new_hash
 end
 
-# consolidate_cart([
-#   {"AVOCADO" => {:price => 3.00, :clearance => true }},{"AVOCADO" => {:price => 3.00, :clearance => true }},{"KALE" => {:price => 3.00, :clearance => false}}])
+consolidate_cart([
+  {"AVOCADO" => {:price => 3.00, :clearance => true }},{"AVOCADO" => {:price => 3.00, :clearance => true }},{"KALE" => {:price => 3.00, :clearance => false}}])
 
 def apply_coupons(cart, coupons = nil)
   if coupons.length == 0 || coupons == nil
@@ -40,8 +40,7 @@ end
 end
 
 new_hash
-
-end
+  end
 
 
 
