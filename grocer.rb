@@ -57,5 +57,4 @@ cart = consolidate_cart(cart)
   p memo + val[:price]
   end
   total_price
-consolidate_cart(cart)
 end
