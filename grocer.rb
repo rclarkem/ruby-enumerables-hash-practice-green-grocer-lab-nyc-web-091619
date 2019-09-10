@@ -51,9 +51,11 @@ new_hash
   if cart.length == 0 || cart == nil
   return consolidate_cart(cart)
   end
+  if cart.length == 1
 cart = consolidate_cart(cart)
 coupons_for_items = apply_coupons(cart, coupons)
 clearance_items = apply_clearance(cart)
+end
   total_price = cart.reduce(0) do |memo, (key, val)|
   p memo + val[:price]
   end
