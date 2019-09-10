@@ -61,5 +61,3 @@ new_hash
         else total_price
         end
       end
-
-end
