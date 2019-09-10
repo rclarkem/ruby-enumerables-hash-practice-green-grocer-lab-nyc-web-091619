@@ -49,7 +49,7 @@ new_hash
 
   def checkout(cart, coupons)
   if cart.length == 0 || cart == nil
-  return cart
+  return consolidate_cart(cart)
   end
   consolidated_cart_items = consolidate_cart(cart)
   p consolidated_cart_items
