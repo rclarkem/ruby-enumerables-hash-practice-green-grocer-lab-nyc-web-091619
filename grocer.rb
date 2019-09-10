@@ -48,19 +48,34 @@ new_hash
   end
 
   def checkout(cart, coupons)
-  if cart.length == 0 || cart == nil
-  return consolidate_cart(cart)
+    def checkout(items, coupons)
+  cart = consolidate_cart(items)
+  cart1 = apply_coupons(cart, coupons)
+  cart2 = apply_clearance(cart1)
+
+  total = 0
+
+  cart2.each do |name, price_hash|
+    total += price_hash[:price] * price_hash[:count]
   end
 
-cart = consolidate_cart(cart)
-coupons_for_items = apply_coupons(cart, coupons)
-clearance_items = apply_clearance(coupons_for_items)
+  total > 100 ? total * 0.9 : total
 
-  total_price = cart.reduce(0) do |memo, (key, val)|
-  p memo + val[:price]
-  end
-  if total_price > 100
-    total_price * 0.10
-  else total_price
-  end
 end
+
+#   if cart.length == 0 || cart == nil
+#   return consolidate_cart(cart)
+#   end
+#
+# cart = consolidate_cart(cart)
+# coupons_for_items = apply_coupons(cart, coupons)
+# clearance_items = apply_clearance(coupons_for_items)
+#
+#   total_price = cart.reduce(0) do |memo, (key, val)|
+#   p memo + val[:price]
+#   end
+#   if total_price > 100
+#     total_price * 0.10
+#   else total_price
+#   end
+# end
