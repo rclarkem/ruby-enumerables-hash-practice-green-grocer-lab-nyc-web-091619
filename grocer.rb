@@ -59,5 +59,8 @@ end
   total_price = cart.reduce(0) do |memo, (key, val)|
   p memo + val[:price]
   end
-  if total_price > 100 ? total_price * 0.10 : total_price
+  if total_price > 100
+    total_price * 0.10
+  else total_price
+  end
 end
